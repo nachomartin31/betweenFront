@@ -1,0 +1,5 @@
+.weatheByCity{
+    display: flex;
+    width: 90%;
+    margin: 10vh auto;
+}
