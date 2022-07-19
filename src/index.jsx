@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { store } from "./redux/index";
 
 import App from "./App";
+import "./styles/globals.module.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
