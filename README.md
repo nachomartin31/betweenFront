@@ -16,7 +16,7 @@ This app implements:
 To open the app locally is required:
 * Node.js 
 
-## Instalation
+## Install
 * Clone this repo locally
 * Add a .env file following the .env.example file. 
 * Install dependencies using `npm install`.
