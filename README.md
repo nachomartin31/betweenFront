@@ -1,5 +1,5 @@
 # Between Frontend
-This project needs to retrieve data from an API.  [API](https://betweenapi.herokuapp.com/) can be used for testing purposes.
+This project needs to retrieve data from this [API](https://betweenapi.herokuapp.com/).
 
 ## Description
 This repo contains the frontend side of between react/node challenge. 
