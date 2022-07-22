@@ -2,7 +2,7 @@
 This project needs to retrieve data from an API.  [API](https://betweenapi.herokuapp.com/) can be used for testing purposes.
 
 ## Description
-This repo constains the frontend side of between react/node challenge. 
+This repo contains the frontend side of between react/node challenge. 
 This app implements:
 * Semantic HTML
 * Unit testing (Jest)
