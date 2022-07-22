@@ -1,7 +1,16 @@
 .miniatureLink{
+    display: flex;
+    flex-direction: column;
     margin: 2vh;
-    padding: 5vh 2vh;
-    width: 25vw;
+    padding: 2vh 3vh 5vh;
+    align-items: center;
+    width: 30vw;
     border-radius: 0.5rem;
     background-color:rgb(197, 125, 83);
+}
+
+@media (min-width:680px) {
+    .miniatureLink{
+        width: 12vw;
+    }
 }

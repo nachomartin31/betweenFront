@@ -1,9 +1,30 @@
+:root{
+    --main-blue: #58BEE0;
+    --gray: #435961;
+    --light-blue: #9ED4E6;
+    --black: #212121;
+    --white: #F4F4F4;
+}
+
 *, *::before, *::after{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body{
+    background-color: var(--white);
+}
+
+a, h1{
+    color: var(--white);
+}
 p{
     width: fit-content;
+    color: var(--main-blue);
+    
+}
+
+a{
+    text-decoration: none;
 }
