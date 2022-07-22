@@ -5,7 +5,7 @@ so it's safe to disable no-params-reassign on this module */
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  system: "km/h"
+  system: "metric"
 };
 
 export const speedSystemSlice = createSlice({
