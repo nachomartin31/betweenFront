@@ -12,19 +12,19 @@ export default function Home() {
     const data = await fetchDataFromApi(`${process.env.REACT_APP_URL}`);
     setWeatherEntries(data);
   };
+  const defineCities = () => {
+    const totalCitiesFromEntries = weatherEntries.map((entry) => entry.location.city);
+    const differentCities = [...new Set(totalCitiesFromEntries)];
+    setCities(differentCities);
+    setFilteredCities(differentCities);
+  };
+
   useEffect(() => {
     loadWeatherEntries();
   }, []);
   useEffect(() => {
-    weatherEntries.forEach((entry) => {
-      if (!cities.includes(entry.location.city)) {
-        setCities([...cities, `${entry.location.city}`]);
-      }
-    });
+    defineCities();
   }, [weatherEntries]);
-  useEffect(() => {
-    setFilteredCities(cities);
-  }, [cities]);
 
   const filterCities = (query) => {
     setFilteredCities(
@@ -33,9 +33,10 @@ export default function Home() {
   };
 
   return (
-    <>
-      <h1>City weather searcher</h1>
-      <label htmlFor="search">
+    <main className={styles.main}>
+      <label htmlFor="search" className={styles.searcher}>
+        City:
+        {" "}
         <input
           type="text"
           name="search"
@@ -47,15 +48,18 @@ export default function Home() {
       {filteredCities.map((
         city
       ) => (
-        <div className={styles.weatheByCity} key={city}>
-          {weatherEntries.filter(
-            (entry) => entry.location.city === city
-          ).map(
-            (entry) => <WeatherMiniature entry={entry} key={entry._id} />
-          )}
-        </div>
+        <section key={city}>
+          <h2 key={`${city}heading`}>{city}</h2>
+          <div className={styles.weatheByCity} key={city}>
+            {weatherEntries.filter(
+              (entry) => entry.location.city === city
+            ).map(
+              (entry) => <WeatherMiniature entry={entry} key={entry._id} />
+            )}
+          </div>
+        </section>
       ))}
 
-    </>
+    </main>
   );
 }
