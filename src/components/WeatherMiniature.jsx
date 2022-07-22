@@ -10,9 +10,10 @@ import styles from "../styles/weatherMiniature.module.css";
 
 function WeatherMiniature({ entry }) {
   const {
-    location, averageTemperature, date, weatherType, _id: id
+    location, averageTemperature, averageWindSpeed, date, weatherType, _id: id
   } = entry;
   const temperatureUnit = useSelector((state) => state.temperatureUnit.unit);
+  const windSystem = useSelector((state) => state.speedSystem.system);
   const [weatherTypeImage, setWeatherTypeImage] = useState("");
   useEffect(() => {
     switch (weatherType) {
@@ -46,18 +47,32 @@ function WeatherMiniature({ entry }) {
       </p>
       <p>{date}</p>
       <img src={weatherTypeImage} alt="Weather" />
-      {temperatureUnit === "celsius" ? (
-        <p>
-          {averageTemperature.celsius}
-          ºC
-        </p>
-      )
-        : (
+      <div>
+        {temperatureUnit === "celsius" ? (
           <p>
-            {averageTemperature.farenheit}
-            ºF
+            {averageTemperature.celsius}
+            ºC
           </p>
-        )}
+        )
+          : (
+            <p>
+              {averageTemperature.farenheit}
+              ºF
+            </p>
+          )}
+        {windSystem === "metric" ? (
+          <p>
+            {averageWindSpeed.metric}
+            Kmh
+          </p>
+        )
+          : (
+            <p>
+              {averageWindSpeed.imperial}
+              Mph
+            </p>
+          )}
+      </div>
     </Link>
   );
 }
