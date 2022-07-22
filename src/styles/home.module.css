@@ -1,5 +1,25 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
 .weatheByCity{
     display: flex;
+    flex-direction: column;
     width: 90%;
-    margin: 10vh auto;
+    margin: 3vh auto;
 }
+
+@media (min-width:680px) {
+.weatheByCity{
+    flex-direction: row;
+}
+}
+
+.searcher{
+    margin: 2rem auto;
+}
+
